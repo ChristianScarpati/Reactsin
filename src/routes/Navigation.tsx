@@ -6,7 +6,9 @@ import { LazyPage1, LazyPage2, LazyPage3 } from '../01-lazyload/pages/index'
 import logo from '../logo.svg'
 
 export const Navigation = () => {
+    
     return (
+
         <BrowserRouter>
             <div className="main-layout">
                 <nav>
