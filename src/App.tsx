@@ -5,7 +5,7 @@ function App() {
     <>
       <Navigation />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
