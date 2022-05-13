@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard, { ProductButtons, ProductImage, ProductTitle } from "../components/ProductCard";
+import {ProductCard, ProductButtons, ProductImage, ProductTitle } from "../components"
 
 const product = {
   id: "1",
@@ -19,10 +19,10 @@ const ShoppingPage = () => {
           flexDirection: "row",
           flexWrap: "wrap",
         }}
-      >
+      >             {/* estandarizar el uso así */}
+
            {/* //! compound component pattern. TENER A LA DISPOSICION DE AÑADIR COMPONENTES HIJOS, MANTENIENDO UNA RELACION DIRECTA ENTRE SI */}
         <ProductCard product={product}>
-             {/* estandarizar el uso así */}
              <ProductCard.Image/>
              <ProductCard.Title title={'Hola mundo'} />
              <ProductCard.Buttons />
