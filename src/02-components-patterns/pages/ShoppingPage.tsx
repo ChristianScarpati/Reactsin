@@ -1,5 +1,5 @@
-import React from "react";
-import {ProductCard, ProductButtons, ProductImage, ProductTitle } from "../components"
+import { ProductCard, ProductButtons, ProductImage, ProductTitle } from "../components";
+import '../styles/custom-style.css'
 
 const product = {
   id: "1",
@@ -9,7 +9,7 @@ const product = {
 
 const ShoppingPage = () => {
   return (
-    <h1>
+    <h1 className="bg-dark">
       Shooping store
       <hr />
       <div
@@ -21,17 +21,40 @@ const ShoppingPage = () => {
         }}
       >             {/* estandarizar el uso así */}
 
-           {/* //! compound component pattern. TENER A LA DISPOSICION DE AÑADIR COMPONENTES HIJOS, MANTENIENDO UNA RELACION DIRECTA ENTRE SI */}
+        {/* //! compound component pattern. TENER A LA DISPOSICION DE AÑADIR COMPONENTES HIJOS, MANTENIENDO UNA RELACION DIRECTA ENTRE SI */}
         <ProductCard product={product}>
-             <ProductCard.Image/>
-             <ProductCard.Title title={'Hola mundo'} />
-             <ProductCard.Buttons />
+          <ProductCard.Image className='custom-img' />
+          <ProductCard.Title className='text-bold' activeClass='active' />
+          <ProductCard.Buttons className='custom-bts' />
         </ProductCard>
 
-        <ProductCard product={product}>
-             <ProductImage/>
-             <ProductTitle />
-             <ProductButtons />
+        <ProductCard
+          product={product}
+          className='text-white bg-dark'
+        >
+          <ProductImage className='custom-img'
+            style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.8' }} />
+          <ProductTitle className='text-bold' activeClass='active' />
+          <ProductButtons className='custom-bts' />
+        </ProductCard>
+
+        <ProductCard
+          product={product}
+          style={{
+            backgroundColor: '#70D1F8'
+          }}
+        >
+          <ProductImage
+            style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.8' }}
+          />
+          <ProductTitle
+            style={{ fontWeight: '100' }}
+          />
+          <ProductButtons
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end'
+            }} />
         </ProductCard>
       </div>
     </h1>

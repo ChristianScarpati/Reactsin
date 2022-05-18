@@ -1,9 +1,15 @@
-import { useContext } from "react";
+import { CSSProperties, useContext } from "react";
 import { ProductContext } from "./ProductCard";
 import noImage from "../assets/no-image.jpg";
 import styles from "../styles/styles.module.css";
 
-export const ProductImage = ({ img = "" }) => {
+export interface ProductImageProps {
+  img?: string;
+  className?: string
+  style?: CSSProperties
+}
+
+export const ProductImage = ({ img, className, style }: ProductImageProps) => {
      //esto quiere decir que la imagen va a ser opcional
    
      const { product } = useContext(ProductContext);
@@ -18,7 +24,12 @@ export const ProductImage = ({ img = "" }) => {
      }
    
      return (
-       <img className={styles.productImg} src={imgToShow} alt="Product Image" />
+       <img 
+       className={`${styles.productImg} ${className}`}
+        src={imgToShow} 
+        alt="Product Image"
+        style={style}
+         />
      );
      //! Un string vacío para un ternario es considerado que NO TIENE VALOR
    };
